@@ -14,3 +14,4 @@ venv/
 models/*.joblib
 models/*.npz
 models/*.pth
+*.ipynb
