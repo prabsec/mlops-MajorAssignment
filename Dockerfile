@@ -1,10 +1,13 @@
-FROM python:3.11-slim
+FROM python:3.10-slim
 
 WORKDIR /app
 
+# Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy all project files into the container
 COPY . .
 
-CMD ["python", "quantize.py"]
+# Default command: run predict.py (NOT quantize.py)
+CMD ["python", "predict.py"]
